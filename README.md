@@ -72,7 +72,7 @@ That's it — every push to `main` will auto-redeploy.
 ## Notes
 
 - The favicon and navbar/footer logo use the logo image you supplied
-  (`src/assets/logo.jpg` / `public/logo-icon.jpg`).
+  (`src/assets/logo.jpg` / `public/logo-icon.png`).
 - Product photography is sourced from Unsplash (free-to-use stock photos) and
   loads directly from Unsplash's CDN, so the repo stays lightweight. Replace
   any image URL in `src/data/content.js` with your own product photography
