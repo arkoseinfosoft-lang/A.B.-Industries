@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-ink antialiased;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+section {
+  scroll-margin-top: 84px;
+}
+
+::selection {
+  background-color: #5C1220;
+  color: #FBF7F2;
+}
+
+/* thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A9A0;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5C1220;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(185,138,78,0.5), transparent);
+}
+
+.text-stroke-wine {
+  -webkit-text-stroke: 1px #5C1220;
+}
+
+.bg-noise {
+  background-image: radial-gradient(rgba(92,18,32,0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.input {
+  @apply w-full border-0 border-b border-ink/20 bg-transparent py-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:border-wine transition-colors duration-300;
+}
+
