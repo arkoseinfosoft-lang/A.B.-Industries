@@ -13,10 +13,10 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0, clipPath: 'inset(0 0% 0 0)' }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative order-2 lg:order-1"
+          className="relative order-2 lg:order-1 px-2 sm:px-0"
         >
-          <div className="relative aspect-[4/5] max-w-md mx-auto">
-            <div className="absolute -inset-3 border border-brass/50" />
+          <div className="relative aspect-[4/5] max-w-[280px] sm:max-w-sm mx-auto">
+            <div className="absolute -inset-2 sm:-inset-3 border border-brass/50" />
             <img
               src={aboutImage}
               alt="Craftsmanship behind A.B. Industries bags"

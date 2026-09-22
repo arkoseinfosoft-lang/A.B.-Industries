@@ -54,7 +54,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-paper">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-14">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14">
         {/* left: info */}
         <div className="lg:col-span-5">
           <motion.p
@@ -70,7 +70,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-display text-4xl sm:text-5xl text-wine leading-[1.1]"
+            className="font-display text-3xl sm:text-4xl lg:text-5xl text-wine leading-[1.1]"
           >
             Let's talk bulk orders.
           </motion.h2>

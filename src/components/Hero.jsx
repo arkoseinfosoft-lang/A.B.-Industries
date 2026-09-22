@@ -115,7 +115,7 @@ export default function Hero() {
       {/* ── Main Content ── */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-20 sm:pt-32 sm:pb-24 grid lg:grid-cols-2 gap-16 lg:gap-8 items-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-24 pb-16 sm:pt-32 sm:pb-24 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
       >
         {/* LEFT COLUMN — copy */}
         <div className="flex flex-col">
@@ -143,7 +143,7 @@ export default function Hero() {
                 initial={{ y: '110%', opacity: 0 }}
                 animate={{ y: '0%', opacity: 1 }}
                 transition={{ delay: 0.35 + li * 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className={`block text-[3.2rem] leading-[1.02] sm:text-7xl lg:text-[5.2rem] xl:text-[5.8rem] lg:leading-[1] ${
+                className={`block text-[2.5rem] leading-[1.04] xs:text-[3rem] sm:text-6xl lg:text-[5rem] xl:text-[5.6rem] lg:leading-[1] ${
                   line.italic ? 'italic text-brass' : ''
                 }`}
               >
@@ -168,13 +168,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.05, duration: 0.7 }}
-            className="mt-10 flex flex-wrap items-center gap-3"
+            className="mt-8 sm:mt-10 flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3"
           >
             <a
               href={orderLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm px-7 py-3.5 shadow-[0_8px_30px_-6px_rgba(37,211,102,0.5)] hover:shadow-[0_12px_36px_-6px_rgba(37,211,102,0.65)] transition-all duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm px-7 py-3.5 shadow-[0_8px_30px_-6px_rgba(37,211,102,0.5)] hover:shadow-[0_12px_36px_-6px_rgba(37,211,102,0.65)] transition-all duration-300 hover:-translate-y-0.5"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0" />
               Order in Bulk
@@ -182,7 +182,7 @@ export default function Hero() {
 
             <a
               href="#collections"
-              className="group inline-flex items-center gap-2 rounded-full border border-ivory/20 hover:border-brass/60 bg-white/5 hover:bg-brass/10 backdrop-blur-sm text-ivory/85 hover:text-brass text-sm font-medium px-6 py-3.5 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-ivory/20 hover:border-brass/60 bg-white/5 hover:bg-brass/10 backdrop-blur-sm text-ivory/85 hover:text-brass text-sm font-medium px-6 py-3.5 transition-all duration-300"
             >
               Explore Catalog
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -194,7 +194,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="mt-14 pt-8 border-t border-ivory/10 grid grid-cols-3 gap-6"
+            className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-ivory/10 grid grid-cols-3 gap-3 sm:gap-6"
           >
             <StatCounter value={25} suffix="+" label="Years Experience" />
             <StatCounter value={4} suffix="" label="Bag Categories" />

@@ -42,7 +42,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-display text-4xl sm:text-5xl text-ivory leading-[1.1] max-w-2xl"
+          className="font-display text-3xl sm:text-4xl lg:text-5xl text-ivory leading-[1.1] max-w-2xl"
         >
           Built for manufacturers who need to move fast.
         </motion.h2>
@@ -70,7 +70,7 @@ export default function WhyUs() {
       </div>
 
       <div className="mt-20 border-t border-ivory/10">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row divide-y sm:divide-y-0 divide-ivory/10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row divide-y sm:divide-y-0 divide-ivory/10 pb-10 sm:pb-16">
           {stats.map((stat, i) => (
             <Stat key={stat.label} stat={stat} isLast={i === stats.length - 1} />
           ))}

@@ -131,7 +131,7 @@ export default function Collections() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="font-display text-4xl sm:text-5xl text-wine leading-[1.1]"
+              className="font-display text-3xl sm:text-4xl lg:text-5xl text-wine leading-[1.1]"
             >
               Four categories, one factory.
             </motion.h2>
@@ -179,7 +179,7 @@ export default function Collections() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-14 p-4 sm:p-5 rounded-xl bg-ivory/70 border border-brass/20 grid grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left"
+          className="mt-14 p-4 sm:p-5 rounded-xl bg-ivory/70 border border-brass/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left"
         >
           {highlights.map((item, i) => {
             const Icon = item.icon

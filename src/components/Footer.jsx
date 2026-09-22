@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-wine-dark text-ivory pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="grid sm:grid-cols-3 gap-10 pb-12 border-b border-ivory/10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pb-12 border-b border-ivory/10">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt={business.brandName} className="h-12 w-12 rounded-md" />
@@ -40,7 +40,7 @@ export default function Footer() {
             <p className="text-sm uppercase tracking-[0.14em] text-brass mb-4">Contact</p>
             <ul className="space-y-2.5 text-ivory/70">
               <li>
-                <a href={`mailto:${business.email}`} className="hover:text-ivory transition-colors">
+                <a href={`mailto:${business.email}`} className="hover:text-ivory transition-colors break-all">
                   {business.email}
                 </a>
               </li>
@@ -53,12 +53,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-ivory/50 text-sm">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-ivory/50 text-sm text-center sm:text-left">
           <p className="flex items-center gap-2">
-            <Sparkle className="h-3 w-3 text-brass" />
-            &copy; {new Date().getFullYear()} {business.legalName}. All rights reserved.Designed & Developed by Arkose Infosoft.
+            <Sparkle className="h-3 w-3 text-brass shrink-0" />
+            &copy; {new Date().getFullYear()} {business.legalName}. All rights reserved. Designed &amp; Developed by Arkose Infosoft.
           </p>
-          <p>Carry Your Style.</p>
+          <p className="shrink-0">Carry Your Style.</p>
         </div>
       </div>
     </footer>
