@@ -29,7 +29,7 @@ Everything editable lives in **one file**: `src/data/content.js`.
 - `stats`, `whyUs` — the "Why choose us" numbers and features.
 - `galleryImages`, `heroImage`, `aboutImage` — photos used across the site
   (currently linked from Unsplash; swap in your own photos any time by
-  replacing the URLs, or by importing local images the same way `logo.jpg`
+  replacing the URLs, or by importing local images the same way `logo.png`
   is imported in the components).
 - `bagTypeOptions` — the dropdown options in the contact form.
 
@@ -72,7 +72,7 @@ That's it — every push to `main` will auto-redeploy.
 ## Notes
 
 - The favicon and navbar/footer logo use the logo image you supplied
-  (`src/assets/logo.jpg` / `public/logo-icon.png`).
+  (`src/assets/logo.png` / `public/logo-icon.png`).
 - Product photography is sourced from Unsplash (free-to-use stock photos) and
   loads directly from Unsplash's CDN, so the repo stays lightweight. Replace
   any image URL in `src/data/content.js` with your own product photography

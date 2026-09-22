@@ -1,4 +1,4 @@
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo.png'
 import { business, navLinks } from '../data/content'
 import Sparkle from './Sparkle'
 
@@ -8,14 +8,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pb-12 border-b border-ivory/10">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt={business.brandName} className="h-12 w-12 rounded-md" />
-              <div>
-                <p className="font-display text-2xl">{business.brandName}</p>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-ivory/50">
-                  {business.tagline}
-                </p>
-              </div>
+            <div className="mb-4">
+              <img src={logo} alt={business.brandName} className="h-11 sm:h-12 w-auto rounded-lg shadow-sm" />
+              <p className="text-[11px] uppercase tracking-[0.16em] text-ivory/50 mt-2.5">
+                {business.tagline} • Since {business.established}
+              </p>
             </div>
             <p className="text-ivory/60 text-sm leading-relaxed max-w-xs">
               {business.legalName} — premium ladies bags & fashion accessories

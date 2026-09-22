@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo.png'
 import { navLinks, business, buildWhatsAppLink } from '../data/content'
 import { useActiveSection } from '../hooks/useActiveSection'
 import WhatsAppIcon from './WhatsAppIcon'
@@ -35,28 +35,12 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3 shrink-0">
+          <a href="#home" className="flex items-center gap-3 shrink-0 group">
             <img
               src={logo}
               alt={`${business.brandName} logo`}
-              className="h-11 w-11 sm:h-12 sm:w-12 object-cover rounded-md shadow-sm"
+              className="h-9 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span
-                className={`font-display text-xl tracking-wide transition-colors duration-500 ${
-                  scrolled ? 'text-wine' : 'text-ivory'
-                }`}
-              >
-                {business.brandName}
-              </span>
-              <span
-                className={`text-[10px] tracking-[0.18em] uppercase transition-colors duration-500 ${
-                  scrolled ? 'text-muted' : 'text-ivory/60'
-                }`}
-              >
-                Since {business.established}
-              </span>
-            </span>
           </a>
 
           <nav className="hidden md:flex items-center gap-9">
@@ -126,8 +110,8 @@ export default function Navbar() {
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="absolute right-0 top-0 h-full w-[78%] max-w-sm bg-ivory shadow-2xl px-7 py-6 flex flex-col"
             >
-              <div className="flex items-center justify-between mb-10">
-                <img src={logo} alt={business.brandName} className="h-11 w-11 rounded-md" />
+              <div className="flex items-center justify-between mb-8">
+                <img src={logo} alt={business.brandName} className="h-9 w-auto rounded-lg shadow-sm" />
                 <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 text-wine">
                   <X className="h-6 w-6" />
                 </button>
