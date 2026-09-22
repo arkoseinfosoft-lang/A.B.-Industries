@@ -56,7 +56,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-ivory/50 text-sm">
           <p className="flex items-center gap-2">
             <Sparkle className="h-3 w-3 text-brass" />
-            &copy; {new Date().getFullYear()} {business.legalName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {business.legalName}. All rights reserved.Designed & Developed by Arkose Infosoft.
           </p>
           <p>Carry Your Style.</p>
         </div>

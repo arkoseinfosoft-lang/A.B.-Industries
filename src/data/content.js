@@ -37,35 +37,51 @@ export const categories = [
   {
     id: 'fashion-bags',
     name: 'Ladies Fashion Bags',
+    tag: 'Bestseller',
     description:
       'Trendy, elegant and stylish bags designed for daily wear, parties and formal occasions.',
     image:
-      'https://images.unsplash.com/photo-1637759292654-a12cb2be085e?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80',
+    moq: 'MOQ 50 pcs',
+    priceText: 'Direct Factory Rates',
+    specs: ['Premium PU & Leatherette', 'Custom Colors', 'Export Finish'],
     featured: true,
   },
   {
     id: 'box-bags',
     name: 'Box Bags / Structured Bags',
+    tag: 'Trending Design',
     description:
       'High-finish box-style handbags with rigid framing, premium linings and contemporary hardware.',
     image:
       'https://images.unsplash.com/photo-1605733513597-a8f8341084e6?auto=format&fit=crop&w=1000&q=80',
+    moq: 'MOQ 50 pcs',
+    priceText: 'Direct Factory Rates',
+    specs: ['Rigid Framing', 'Metallic Clasp', 'Shape Retention'],
   },
   {
     id: 'crossbody-sling',
     name: 'Crossbody & Sling Bags',
+    tag: 'Popular Choice',
     description:
       'Compact, functional and hands-free bags crafted with adjustable straps and secure compartments.',
     image:
       'https://images.unsplash.com/photo-1603219527847-24c87f552a77?auto=format&fit=crop&w=1000&q=80',
+    moq: 'MOQ 50 pcs',
+    priceText: 'Direct Factory Rates',
+    specs: ['Adjustable Strap', 'Secure Zippers', 'Everyday Comfort'],
   },
   {
     id: 'shoulder-handbags',
     name: 'Shoulder & Handbags',
+    tag: 'Signature Line',
     description:
       'Spacious, fashionable designs crafted from high-quality PU leather, fabrics and textured materials.',
     image:
       'https://images.unsplash.com/photo-1612902456551-333ac5afa26e?auto=format&fit=crop&w=1000&q=80',
+    moq: 'MOQ 50 pcs',
+    priceText: 'Direct Factory Rates',
+    specs: ['Spacious Capacity', 'Reinforced Handles', 'Bespoke Lining'],
   },
 ]
 
