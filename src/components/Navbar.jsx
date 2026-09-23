@@ -35,12 +35,26 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3 shrink-0 group">
-            <img
-              src={logo}
-              alt={`${business.brandName} logo`}
-              className="h-9 sm:h-11 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform duration-300"
-            />
+          <a href="#home" className="flex items-center shrink-0 group">
+            <div className="relative flex items-center">
+              {/* Ambient gold glow halo */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-brass/40 via-brass-light/60 to-brass/40 rounded-xl blur-[5px] opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              {/* Luxury Gold-Framed Plaque */}
+              <div
+                className={`relative px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-xl border-2 border-brass-light shadow-[0_4px_20px_rgba(0,0,0,0.45)] transition-all duration-300 group-hover:scale-[1.02] ${
+                  scrolled
+                    ? 'bg-wine-dark'
+                    : 'bg-gradient-to-b from-[#4A0B17] to-[#2B040C]'
+                }`}
+              >
+                <img
+                  src={logo}
+                  alt={`${business.brandName} logo`}
+                  className="h-8 sm:h-10 md:h-11 w-auto object-contain brightness-110 contrast-105"
+                />
+              </div>
+            </div>
           </a>
 
           <nav className="hidden md:flex items-center gap-9">
@@ -111,7 +125,9 @@ export default function Navbar() {
               className="absolute right-0 top-0 h-full w-[78%] max-w-sm bg-ivory shadow-2xl px-7 py-6 flex flex-col"
             >
               <div className="flex items-center justify-between mb-8">
-                <img src={logo} alt={business.brandName} className="h-9 w-auto rounded-lg shadow-sm" />
+                <div className="px-2.5 py-1 rounded-xl bg-wine-dark border border-brass-light shadow-md">
+                  <img src={logo} alt={business.brandName} className="h-8 w-auto object-contain brightness-110" />
+                </div>
                 <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 text-wine">
                   <X className="h-6 w-6" />
                 </button>
