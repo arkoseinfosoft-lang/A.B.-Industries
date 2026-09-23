@@ -161,6 +161,8 @@ export default function Contact() {
                   <input
                     required
                     type="text"
+                    id="contact-name"
+                    name="name"
                     value={form.name}
                     onChange={update('name')}
                     placeholder="Your name"
@@ -171,6 +173,8 @@ export default function Contact() {
                   <input
                     required
                     type="tel"
+                    id="contact-phone"
+                    name="phone"
                     value={form.phone}
                     onChange={update('phone')}
                     placeholder="+91 XXXXX XXXXX"
@@ -182,6 +186,8 @@ export default function Contact() {
                     required
                     type="number"
                     min="1"
+                    id="contact-quantity"
+                    name="quantity"
                     value={form.quantity}
                     onChange={update('quantity')}
                     placeholder="e.g. 200 pieces"
@@ -189,7 +195,13 @@ export default function Contact() {
                   />
                 </Field>
                 <Field label="Bag type">
-                  <select value={form.bagType} onChange={update('bagType')} className="input">
+                  <select
+                    id="contact-bagType"
+                    name="bagType"
+                    value={form.bagType}
+                    onChange={update('bagType')}
+                    className="input"
+                  >
                     {bagTypeOptions.map((opt) => (
                       <option key={opt} value={opt}>
                         {opt}
@@ -199,6 +211,8 @@ export default function Contact() {
                 </Field>
                 <Field label="Message" full>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     value={form.message}
                     onChange={update('message')}
                     rows={4}
