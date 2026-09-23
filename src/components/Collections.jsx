@@ -10,7 +10,7 @@ function CategoryCard({ category, index }) {
 
   return (
     <div
-      className="group flex flex-col h-auto sm:h-full bg-white rounded-xl sm:rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_20px_-4px_rgba(42,33,29,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-shadow duration-300 overflow-hidden w-[68vw] xs:w-[250px] max-w-[270px] sm:max-w-none sm:w-auto shrink-0 sm:shrink snap-center"
+      className="group flex flex-col h-auto sm:h-full bg-white rounded-xl sm:rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_20px_-4px_rgba(42,33,29,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-shadow duration-300 overflow-hidden w-[68vw] xs:w-[250px] max-w-[270px] sm:max-w-none sm:w-auto shrink-0 sm:shrink snap-start"
     >
       {/* Product Image Area */}
       <div className="relative aspect-square sm:aspect-[4/5] w-full overflow-hidden bg-[#F4EFEB]">
@@ -164,7 +164,7 @@ export default function Collections() {
 
         {/* 4 Equal Bags Track (Horizontal Scroll on Mobile, Grid on Tablet/Desktop) */}
         <div
-          className="mt-12 flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-6 xl:gap-8 overflow-x-auto overflow-y-hidden sm:overflow-visible py-3 sm:py-0 snap-x snap-mandatory no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0 touch-pan-x overscroll-x-contain"
+          className="mt-12 flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-6 xl:gap-8 overflow-x-auto overflow-y-hidden sm:overflow-visible py-3 sm:py-0 snap-x snap-proximity scroll-smooth no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {categories.map((category, index) => (
