@@ -95,28 +95,28 @@ export const galleryImages = [
 ]
 
 export const stats = [
-  { value: 25, suffix: '+', label: 'Years of manufacturing experience' },
-  { value: 1997, suffix: '', label: 'Established, and still crafting' },
-  { value: 100, suffix: '%', label: 'Factory-direct pricing' },
-  { value: 4, suffix: '', label: 'Core bag categories in production' },
+  { value: 50, suffix: ' pcs', label: 'Low Minimum Order Quantity (MOQ)' },
+  { value: 48, suffix: ' hrs', label: 'Sample Turnaround & Dispatch' },
+  { value: 100, suffix: '%', label: 'Pan-India Express Logistics' },
+  { textValue: 'OEM', suffix: ' / ODM', label: 'Custom Logo Embossing & Labeling' },
 ]
 
 export const whyUs = [
   {
-    title: 'Legacy of excellence',
-    description: '25+ years of industry experience manufacturing ladies bags, since 1997.',
+    title: 'Low MOQ Flexibility',
+    description: 'Start with just 50 pieces per design, allowing retailers and boutiques to test trends with low inventory risk.',
   },
   {
-    title: 'Direct factory pricing',
-    description: 'Transparent, cost-effective rates straight from the manufacturer — no middlemen.',
+    title: 'Direct Factory Pricing',
+    description: 'Transparent, highly competitive rates direct from our manufacturing floor — no middleman markups.',
   },
   {
-    title: 'Trendsetting designs',
-    description: 'A constantly updated catalog that keeps pace with global fashion trends.',
+    title: 'OEM & Custom Branding',
+    description: 'Custom logo embossing, personalized hardware, bespoke inner linings, and custom brand packaging for bulk clients.',
   },
   {
-    title: 'Capacity & timely delivery',
-    description: 'Good production capacity built to support bulk orders and reliable timelines.',
+    title: 'Pan-India Express Dispatch',
+    description: 'Dedicated logistics coordination ensuring reliable bulk freight and prompt delivery for peak festive demands.',
   },
 ]
 

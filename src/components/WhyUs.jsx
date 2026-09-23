@@ -6,7 +6,7 @@ import { useCountUp } from '../hooks/useCountUp'
 const icons = [Award, Factory, Sparkles, Truck]
 
 function Stat({ stat, isLast }) {
-  const [ref, value] = useCountUp(stat.value)
+  const [ref, value] = useCountUp(typeof stat.value === 'number' ? stat.value : 0)
   return (
     <div
       ref={ref}
@@ -15,7 +15,7 @@ function Stat({ stat, isLast }) {
       }`}
     >
       <p className="font-display text-4xl sm:text-5xl text-brass">
-        {value.toLocaleString()}
+        {stat.textValue ? stat.textValue : value.toLocaleString()}
         {stat.suffix}
       </p>
       <p className="mt-2 text-ivory/70 text-sm max-w-[16ch] mx-auto sm:mx-0">
@@ -44,7 +44,7 @@ export default function WhyUs() {
           transition={{ duration: 0.8 }}
           className="font-display text-3xl sm:text-4xl lg:text-5xl text-ivory leading-[1.1] max-w-2xl"
         >
-          Built for manufacturers who need to move fast.
+          Built for retailers, wholesalers & brands who need to move fast.
         </motion.h2>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
