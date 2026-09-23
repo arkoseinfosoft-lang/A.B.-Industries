@@ -9,9 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pb-12 border-b border-ivory/10">
           <div>
             <div className="mb-4">
-              <div className="inline-block p-1.5 rounded-xl border border-brass/40 bg-wine-dark/80 shadow-sm">
-                <img src={logo} alt={business.brandName} className="h-10 sm:h-11 w-auto object-contain brightness-105" />
-              </div>
+              <img src={logo} alt={business.brandName} className="h-10 sm:h-12 w-auto object-contain" />
               <p className="text-[11px] uppercase tracking-[0.16em] text-ivory/50 mt-2.5">
                 {business.tagline} • Since {business.established}
               </p>

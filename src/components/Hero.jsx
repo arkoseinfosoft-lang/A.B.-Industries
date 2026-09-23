@@ -25,10 +25,13 @@ function StatCounter({ value, suffix, label }) {
 
   return (
     <div className="flex flex-col">
-      <span className="font-display text-3xl sm:text-4xl text-ivory font-bold leading-none">
-        {display}{suffix}
+      <span className="font-display text-3xl sm:text-4xl text-wine font-bold leading-none">
+        {display}
+        <span className="text-brass font-normal">{suffix}</span>
       </span>
-      <span className="mt-1 text-ivory/55 text-[11px] tracking-wider uppercase leading-tight">{label}</span>
+      <span className="mt-1 text-ink/65 text-[11px] tracking-wider uppercase leading-tight font-medium">
+        {label}
+      </span>
     </div>
   )
 }
@@ -40,7 +43,7 @@ function ProductFloat({ src, alt, delay, className }) {
       initial={{ opacity: 0, scale: 0.88, y: 24 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className={`absolute overflow-hidden rounded-xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)] border border-white/15 ${className}`}
+      className={`absolute overflow-hidden rounded-xl shadow-[0_15px_40px_-8px_rgba(92,18,32,0.2)] border-2 border-brass/30 bg-white ${className}`}
     >
       <img src={src} alt={alt} className="h-full w-full object-cover" />
     </motion.div>
@@ -50,16 +53,12 @@ function ProductFloat({ src, alt, delay, className }) {
 export default function Hero() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '16%'])
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '16%'])
+  const opacity = useTransform(scrollYProgress, [0, 0.65], [1, 0])
 
   const orderLink = buildWhatsAppLink(
     `Hi ${business.brandName}, I'd like to place a bulk order. Please share your latest catalog and pricing.`
-  )
-
-  const catalogLink = buildWhatsAppLink(
-    `Hi ${business.brandName}, please share your latest product catalog.`
   )
 
   const lines = [
@@ -71,12 +70,12 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-[100svh] flex items-center overflow-hidden bg-wine-dark"
+      className="relative min-h-[100svh] flex items-center overflow-hidden bg-gradient-to-br from-ivory via-[#FAF4ED] to-[#F3EAE0]"
     >
-      {/* ── Parallax Background Image ── */}
+      {/* ── Parallax Background with soft luxury blend ── */}
       <motion.div
         style={{ y: bgY }}
-        className="absolute inset-0 scale-110 will-change-transform"
+        className="absolute inset-0 scale-105 will-change-transform opacity-25 mix-blend-multiply pointer-events-none"
       >
         <img
           src={heroImage}
@@ -84,24 +83,32 @@ export default function Hero() {
           className="h-full w-full object-cover object-center"
           loading="eager"
         />
-        {/* Gradient overlay layers */}
-        <div className="absolute inset-0 bg-gradient-to-r from-wine-dark/95 via-wine-dark/75 to-wine-dark/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-wine-dark/90 via-transparent to-wine-dark/40" />
-        {/* Noise texture */}
-        <div
-          className="absolute inset-0 opacity-[0.025] mix-blend-overlay"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-            backgroundSize: '256px 256px',
-          }}
-        />
+        {/* Soft champagne & ivory vignettes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ivory via-ivory/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ivory via-transparent to-ivory/80" />
       </motion.div>
 
+      {/* Decorative background watermark */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] select-none flex items-center justify-center">
+        <span className="font-display text-[24vw] font-bold text-wine tracking-widest uppercase">
+          A.B. BAGS
+        </span>
+      </div>
+
       {/* ── Floating Sparkles ── */}
-      <Sparkle className="hidden sm:block absolute top-[18%] left-[42%] h-4 w-4 text-brass/80 animate-twinkle" />
-      <Sparkle className="hidden sm:block absolute top-[32%] right-[26%] h-3 w-3 text-blush/70 animate-twinkle" style={{ animationDelay: '1.3s' }} />
-      <Sparkle className="hidden sm:block absolute top-[60%] left-[38%] h-5 w-5 text-brass/60 animate-twinkle" style={{ animationDelay: '0.7s' }} />
-      <Sparkle className="hidden sm:block absolute top-[12%] right-[40%] h-3 w-3 text-blush/50 animate-twinkle" style={{ animationDelay: '2.1s' }} />
+      <Sparkle className="hidden sm:block absolute top-[18%] left-[42%] h-4 w-4 text-brass/70 animate-twinkle" />
+      <Sparkle
+        className="hidden sm:block absolute top-[32%] right-[26%] h-3 w-3 text-brass/60 animate-twinkle"
+        style={{ animationDelay: '1.3s' }}
+      />
+      <Sparkle
+        className="hidden sm:block absolute top-[60%] left-[38%] h-5 w-5 text-brass/50 animate-twinkle"
+        style={{ animationDelay: '0.7s' }}
+      />
+      <Sparkle
+        className="hidden sm:block absolute top-[14%] right-[40%] h-3 w-3 text-brass/60 animate-twinkle"
+        style={{ animationDelay: '2.1s' }}
+      />
 
       {/* ── Decorative vertical line ── */}
       <motion.div
@@ -115,7 +122,7 @@ export default function Hero() {
       {/* ── Main Content ── */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-24 pb-16 sm:pt-32 sm:pb-24 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-16 sm:pt-36 sm:pb-24 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center"
       >
         {/* LEFT COLUMN — copy */}
         <div className="flex flex-col">
@@ -124,19 +131,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="mb-8 inline-flex items-center gap-2.5 self-start rounded-full border border-brass/35 bg-wine-dark/40 backdrop-blur-md px-4 py-1.5"
+            className="mb-8 inline-flex items-center gap-2.5 self-start rounded-full border border-brass/40 bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
             </span>
-            <span className="text-ivory/80 text-[11px] font-medium tracking-[0.18em] uppercase">
+            <span className="text-wine text-[11px] font-semibold tracking-[0.18em] uppercase">
               {business.legalName} · Since {business.established}
             </span>
           </motion.div>
 
           {/* Big headline */}
-          <h1 className="font-display text-ivory overflow-hidden">
+          <h1 className="font-display text-wine overflow-hidden">
             {lines.map((line, li) => (
               <motion.span
                 key={li}
@@ -144,7 +151,7 @@ export default function Hero() {
                 animate={{ y: '0%', opacity: 1 }}
                 transition={{ delay: 0.35 + li * 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 className={`block text-[2.5rem] leading-[1.04] xs:text-[3rem] sm:text-6xl lg:text-[5rem] xl:text-[5.6rem] lg:leading-[1] ${
-                  line.italic ? 'italic text-brass' : ''
+                  line.italic ? 'italic text-brass font-normal' : 'font-semibold'
                 }`}
               >
                 {line.text}
@@ -157,7 +164,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.8 }}
-            className="mt-7 max-w-md text-ivory/65 text-base sm:text-[17px] leading-relaxed"
+            className="mt-7 max-w-md text-ink/75 text-base sm:text-[17px] leading-relaxed"
           >
             Ladies fashion bags, structured designs, crossbody and shoulder bags —
             manufactured since&nbsp;1997 at direct factory pricing.
@@ -174,7 +181,7 @@ export default function Hero() {
               href={orderLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm px-7 py-3.5 shadow-[0_8px_30px_-6px_rgba(37,211,102,0.5)] hover:shadow-[0_12px_36px_-6px_rgba(37,211,102,0.65)] transition-all duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm px-7 py-3.5 shadow-[0_8px_30px_-6px_rgba(37,211,102,0.45)] hover:shadow-[0_12px_36px_-6px_rgba(37,211,102,0.6)] transition-all duration-300 hover:-translate-y-0.5"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0" />
               Order in Bulk
@@ -182,7 +189,7 @@ export default function Hero() {
 
             <a
               href="#collections"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-ivory/20 hover:border-brass/60 bg-white/5 hover:bg-brass/10 backdrop-blur-sm text-ivory/85 hover:text-brass text-sm font-medium px-6 py-3.5 transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-wine/25 hover:border-wine bg-white/70 hover:bg-wine text-wine hover:text-ivory backdrop-blur-sm text-sm font-medium px-6 py-3.5 shadow-sm transition-all duration-300"
             >
               Explore Catalog
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -194,7 +201,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-ivory/10 grid grid-cols-3 gap-3 sm:gap-6"
+            className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-brass/20 grid grid-cols-3 gap-3 sm:gap-6"
           >
             <StatCounter value={25} suffix="+" label="Years Experience" />
             <StatCounter value={4} suffix="" label="Bag Categories" />
@@ -214,17 +221,19 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ delay: 0.55, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-[320px] h-[420px] rounded-2xl overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)] border border-white/10"
+            className="relative w-[320px] h-[420px] rounded-2xl overflow-hidden shadow-[0_30px_70px_-15px_rgba(92,18,32,0.22)] border-2 border-brass/35 bg-white"
           >
             <img
               src={categories[0]?.image || heroImage}
               alt="Ladies Fashion Bags showcase"
               className="h-full w-full object-cover animate-floaty"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-wine-dark/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-wine-dark/75 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5">
-              <span className="text-ivory/60 text-[10px] tracking-widest uppercase">Featured</span>
-              <p className="font-display text-xl text-ivory mt-0.5">Ladies Fashion Bags</p>
+              <span className="text-brass-light text-[10px] tracking-widest uppercase font-semibold">
+                Featured
+              </span>
+              <p className="font-display text-xl text-ivory mt-0.5 font-medium">Ladies Fashion Bags</p>
             </div>
           </motion.div>
 
@@ -249,10 +258,10 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2, duration: 0.7 }}
-            className="absolute top-12 left-0 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-4 py-3 shadow-lg"
+            className="absolute top-12 left-0 bg-white/90 backdrop-blur-md border border-brass/40 rounded-xl px-4 py-3 shadow-lg"
           >
-            <p className="text-[10px] text-ivory/50 tracking-widest uppercase mb-0.5">Est.</p>
-            <p className="font-display text-2xl text-brass font-bold leading-none">1997</p>
+            <p className="text-[10px] text-muted tracking-widest uppercase mb-0.5">Est.</p>
+            <p className="font-display text-2xl text-wine font-bold leading-none">1997</p>
           </motion.div>
 
           {/* Floating badge — bottom right */}
@@ -260,16 +269,16 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.35, duration: 0.7 }}
-            className="absolute bottom-14 right-0 flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-4 py-3 shadow-lg"
+            className="absolute bottom-14 right-0 flex items-center gap-2.5 bg-white/90 backdrop-blur-md border border-brass/40 rounded-xl px-4 py-3 shadow-lg"
           >
             <span className="flex h-2 w-2 rounded-full bg-[#25D366]" />
-            <p className="text-ivory/80 text-[12px] font-medium">Bulk Orders Open</p>
+            <p className="text-wine text-[12px] font-semibold">Bulk Orders Open</p>
           </motion.div>
 
           {/* Decorative orbit ring */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border border-brass/10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-brass/08" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] rounded-full border border-brass/20" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-brass/15" />
           </div>
         </motion.div>
       </motion.div>
@@ -279,9 +288,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.8 }}
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-ivory/35"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-wine/40"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+        <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
