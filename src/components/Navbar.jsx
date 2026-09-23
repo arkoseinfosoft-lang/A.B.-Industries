@@ -6,10 +6,12 @@ import { navLinks, business, buildWhatsAppLink } from '../data/content'
 import { useActiveSection } from '../hooks/useActiveSection'
 import WhatsAppIcon from './WhatsAppIcon'
 
+const sectionIds = navLinks.map((l) => l.href.replace('#', ''))
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const activeId = useActiveSection(navLinks.map((l) => l.href.replace('#', '')))
+  const activeId = useActiveSection(sectionIds)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
  */
 export function useActiveSection(ids) {
   const [active, setActive] = useState(ids[0])
+  const idsKey = ids.join(',')
 
   useEffect(() => {
     const elements = ids
@@ -26,13 +27,13 @@ export function useActiveSection(ids) {
       },
       {
         rootMargin: '-40% 0px -50% 0px',
-        threshold: [0, 0.25, 0.5, 0.75, 1],
+        threshold: [0, 0.5, 1],
       }
     )
 
     elements.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [ids])
+  }, [idsKey])
 
   return active
 }
