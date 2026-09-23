@@ -14,10 +14,10 @@ function CategoryCard({ category, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      className="group flex flex-col h-full bg-white rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_24px_-6px_rgba(42,33,29,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-all duration-300 overflow-hidden w-[82vw] max-w-[320px] sm:max-w-none sm:w-auto shrink-0 sm:shrink snap-center"
+      className="group flex flex-col h-full bg-white rounded-xl sm:rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_24px_-6px_rgba(42,33,29,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-all duration-300 overflow-hidden w-[68vw] xs:w-[250px] max-w-[270px] sm:max-w-none sm:w-auto shrink-0 sm:shrink snap-center"
     >
       {/* Product Image Area */}
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F4EFEB]">
+      <div className="relative aspect-square sm:aspect-[4/5] w-full overflow-hidden bg-[#F4EFEB]">
         <img
           src={category.image}
           alt={category.name}
@@ -29,44 +29,44 @@ function CategoryCard({ category, index }) {
         <div className="absolute inset-0 bg-gradient-to-t from-wine-dark/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none z-10">
-          <span className="inline-flex items-center gap-1 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-wine tracking-wider uppercase shadow-sm border border-brass/25">
-            <Sparkles className="h-3 w-3 text-brass" />
+        <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex items-center justify-between gap-1.5 pointer-events-none z-10">
+          <span className="inline-flex items-center gap-1 rounded-full bg-white/95 backdrop-blur-md px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-bold text-wine tracking-wider uppercase shadow-sm border border-brass/25">
+            <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-brass" />
             {category.tag || 'Featured'}
           </span>
 
-          <span className="rounded-full bg-wine/90 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-semibold text-ivory tracking-wide uppercase shadow-sm">
+          <span className="rounded-full bg-wine/90 backdrop-blur-md px-2 sm:px-2.5 py-0.5 text-[9px] sm:text-[10px] font-semibold text-ivory tracking-wide uppercase shadow-sm">
             {category.moq || 'MOQ 50 pcs'}
           </span>
         </div>
       </div>
 
       {/* Product Information Body */}
-      <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+      <div className="p-3.5 sm:p-6 flex flex-col flex-grow justify-between">
         <div>
           {/* Eyebrow / Catalog SKU */}
-          <div className="flex items-center justify-between text-[11px] tracking-[0.14em] uppercase text-brass font-medium mb-1.5">
+          <div className="flex items-center justify-between text-[10px] sm:text-[11px] tracking-[0.14em] uppercase text-brass font-medium mb-1">
             <span>Catalogue 0{index + 1}</span>
             <span className="text-muted/80">Direct Factory</span>
           </div>
 
           {/* Title */}
-          <h3 className="font-display text-xl sm:text-[22px] text-wine font-semibold leading-tight group-hover:text-wine-light transition-colors min-h-[3.25rem] flex items-center">
+          <h3 className="font-display text-lg sm:text-[22px] text-wine font-semibold leading-tight group-hover:text-wine-light transition-colors min-h-0 sm:min-h-[3.25rem] flex items-center">
             {category.name}
           </h3>
 
           {/* Description */}
-          <p className="mt-2 text-ink/70 text-xs sm:text-[13px] leading-relaxed line-clamp-2">
+          <p className="mt-1.5 sm:mt-2 text-ink/70 text-xs sm:text-[13px] leading-relaxed line-clamp-2">
             {category.description}
           </p>
 
           {/* Spec tags */}
           {category.specs && category.specs.length > 0 && (
-            <div className="mt-3.5 flex flex-wrap gap-1.5">
+            <div className="mt-2.5 sm:mt-3.5 flex flex-wrap gap-1 sm:gap-1.5">
               {category.specs.map((spec, i) => (
                 <span
                   key={i}
-                  className="inline-block text-[11px] px-2.5 py-0.5 rounded-md bg-ivory text-ink/80 border border-brass/20 font-medium"
+                  className="inline-block text-[10px] sm:text-[11px] px-2 sm:px-2.5 py-0.5 rounded-md bg-ivory text-ink/80 border border-brass/20 font-medium"
                 >
                   {spec}
                 </span>
@@ -76,9 +76,9 @@ function CategoryCard({ category, index }) {
         </div>
 
         {/* Pricing & Dedicated WhatsApp CTA Button */}
-        <div className="mt-5 pt-3.5 border-t border-brass/15">
-          <div className="flex items-center justify-between mb-3 text-xs">
-            <span className="text-muted">Wholesale Rate:</span>
+        <div className="mt-3.5 sm:mt-5 pt-2.5 sm:pt-3.5 border-t border-brass/15">
+          <div className="flex items-center justify-between mb-2 sm:mb-3 text-[11px] sm:text-xs">
+            <span className="text-muted">Wholesale:</span>
             <span className="font-semibold text-wine tracking-wide">
               {category.priceText || 'Direct Factory Rates'}
             </span>
@@ -89,9 +89,9 @@ function CategoryCard({ category, index }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Enquire about ${category.name} on WhatsApp`}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white py-3 px-4 font-semibold text-sm shadow-[0_4px_14px_-2px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_20px_-2px_rgba(37,211,102,0.5)] transition-all duration-200 active:scale-[0.98] group/btn"
+            className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white py-2.5 sm:py-3 px-3 sm:px-4 font-semibold text-xs sm:text-sm shadow-[0_4px_14px_-2px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_20px_-2px_rgba(37,211,102,0.5)] transition-all duration-200 active:scale-[0.98] group/btn"
           >
-            <WhatsAppIcon className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover/btn:scale-115" />
+            <WhatsAppIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 transition-transform duration-300 group-hover/btn:scale-115" />
             <span>Enquire on WhatsApp</span>
           </a>
         </div>
