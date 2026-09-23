@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-ivory">
       <Navbar />
-      <main>
+      <main className="relative">
         <Hero />
         <MarqueeStrip />
         <About />

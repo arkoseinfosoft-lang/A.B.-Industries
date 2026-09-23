@@ -7,8 +7,12 @@ html {
 }
 
 body {
-  @apply bg-ivory text-ink antialiased;
+  @apply bg-ivory text-ink antialiased relative min-h-screen;
   font-family: 'Manrope', sans-serif;
+}
+
+#root {
+  position: relative;
 }
 
 h1, h2, h3, h4,

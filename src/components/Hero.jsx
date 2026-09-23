@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 import { business, heroImage, buildWhatsAppLink, categories } from '../data/content'
@@ -51,11 +51,10 @@ function ProductFloat({ src, alt, delay, className }) {
 }
 
 export default function Hero() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '16%'])
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '16%'])
-  const opacity = useTransform(scrollYProgress, [0, 0.65], [1, 0])
+  const { scrollY } = useScroll()
+  const bgY = useTransform(scrollY, [0, 800], ['0%', '16%'])
+  const textY = useTransform(scrollY, [0, 800], ['0%', '16%'])
+  const opacity = useTransform(scrollY, [0, 500], [1, 0])
 
   const orderLink = buildWhatsAppLink(
     `Hi ${business.brandName}, I'd like to place a bulk order. Please share your latest catalog and pricing.`
@@ -69,7 +68,6 @@ export default function Hero() {
   return (
     <section
       id="home"
-      ref={ref}
       className="relative min-h-[100svh] flex items-center overflow-hidden bg-gradient-to-br from-ivory via-[#FAF4ED] to-[#F3EAE0]"
     >
       {/* ── Parallax Background with soft luxury blend ── */}
