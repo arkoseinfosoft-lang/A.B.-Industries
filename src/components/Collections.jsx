@@ -14,7 +14,7 @@ function CategoryCard({ category, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      className="group flex flex-col h-full bg-white rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_24px_-6px_rgba(42,33,29,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-all duration-300 overflow-hidden"
+      className="group flex flex-col h-full bg-white rounded-2xl border border-brass/20 hover:border-brass/60 shadow-[0_4px_24px_-6px_rgba(42,33,29,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(92,18,32,0.14)] transition-all duration-300 overflow-hidden w-[82vw] max-w-[320px] sm:max-w-none sm:w-auto shrink-0 sm:shrink snap-center"
     >
       {/* Product Image Area */}
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F4EFEB]">
@@ -166,11 +166,16 @@ export default function Collections() {
           </motion.div>
         </div>
 
-        {/* 4 Equal Bags Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-6 xl:gap-8">
+        {/* 4 Equal Bags Track (Horizontal Scroll on Mobile, Grid on Tablet/Desktop) */}
+        <div className="mt-12 flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-6 xl:gap-8 overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 snap-x snap-mandatory no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0">
           {categories.map((category, index) => (
             <CategoryCard key={category.id} category={category} index={index} />
           ))}
+        </div>
+
+        {/* Mobile Swipe Indicator */}
+        <div className="flex sm:hidden items-center justify-center gap-2 mt-4 text-xs text-muted font-medium">
+          <span className="inline-block animate-pulse">← Swipe to explore all 4 collections →</span>
         </div>
 
         {/* E-Commerce Trust Badges Strip */}

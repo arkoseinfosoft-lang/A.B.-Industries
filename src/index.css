@@ -68,3 +68,11 @@ section {
   @apply w-full border-0 border-b border-ink/20 bg-transparent py-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:border-wine transition-colors duration-300;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
